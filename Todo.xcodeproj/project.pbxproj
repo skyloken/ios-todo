@@ -12,6 +12,8 @@
 		BE4CA789215F681400807762 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE4CA788215F681400807762 /* Assets.xcassets */; };
 		BE4CA78C215F681400807762 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4CA78A215F681400807762 /* LaunchScreen.storyboard */; };
 		BE4CA794215F6A5C00807762 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4CA793215F6A5C00807762 /* TableViewController.swift */; };
+		BE9268B1216123940033F3C1 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9268B0216123940033F3C1 /* AddViewController.swift */; };
+		BE9268B3216124C90033F3C1 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9268B2216124C90033F3C1 /* Todo.swift */; };
 		BEB271E8215F7A6D003B0CE0 /* Pods_Todo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB271E7215F7A6D003B0CE0 /* Pods_Todo.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +28,8 @@
 		BE4CA793215F6A5C00807762 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		BE8A4477215F76AF00D92E48 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8A4479215F76AF00D92E48 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE9268B0216123940033F3C1 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		BE9268B2216124C90033F3C1 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		BEABA08D215F783700E2B4BE /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB271E7215F7A6D003B0CE0 /* Pods_Todo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Todo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C925F19BBB69C486CF96E205 /* Pods-Todo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Todo/Pods-Todo.release.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 				BE4CA78A215F681400807762 /* LaunchScreen.storyboard */,
 				BE4CA78D215F681400807762 /* Info.plist */,
 				BE4CA793215F6A5C00807762 /* TableViewController.swift */,
+				BE9268B0216123940033F3C1 /* AddViewController.swift */,
+				BE9268B2216124C90033F3C1 /* Todo.swift */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -220,6 +226,8 @@
 			files = (
 				BE4CA782215F681300807762 /* AppDelegate.swift in Sources */,
 				BE4CA794215F6A5C00807762 /* TableViewController.swift in Sources */,
+				BE9268B1216123940033F3C1 /* AddViewController.swift in Sources */,
+				BE9268B3216124C90033F3C1 /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
