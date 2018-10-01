@@ -49,6 +49,17 @@ class TableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            let realm = try! Realm()
+            let todoList = realm.objects(Todo.self)
+            try! realm.write {
+                realm.delete(todoList[indexPath.row])
+            }
+        }
+        tableView.reloadData()
+    }
+    
     // 再読み込み
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
