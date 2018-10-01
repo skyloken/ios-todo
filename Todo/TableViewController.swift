@@ -23,25 +23,37 @@ class TableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+    // セクションの数
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
+    // セルの数
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        let realm = try! Realm()
+        let todoList = realm.objects(Todo.self)
+        return todoList.count
     }
 
-    /*
+    // セルを作る
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        // テーブルのセルを参照する
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         // Configure the cell...
+        let realm = try! Realm()
+        let todoList = realm.objects(Todo.self)
+        let todoData = todoList[indexPath.row]
+        cell.textLabel?.text = todoData.text
 
         return cell
     }
-    */
+    
+    // 再読み込み
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     /*
     // Override to support conditional editing of the table view.
