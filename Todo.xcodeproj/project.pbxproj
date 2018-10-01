@@ -15,6 +15,7 @@
 		BE9268B1216123940033F3C1 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9268B0216123940033F3C1 /* AddViewController.swift */; };
 		BE9268B3216124C90033F3C1 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9268B2216124C90033F3C1 /* Todo.swift */; };
 		BEB271E8215F7A6D003B0CE0 /* Pods_Todo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEB271E7215F7A6D003B0CE0 /* Pods_Todo.framework */; };
+		BED1F13F2162315B003850C6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1F13E2162315B003850C6 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		BE9268B2216124C90033F3C1 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		BEABA08D215F783700E2B4BE /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB271E7215F7A6D003B0CE0 /* Pods_Todo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Todo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BED1F13E2162315B003850C6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C925F19BBB69C486CF96E205 /* Pods-Todo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Todo/Pods-Todo.release.xcconfig"; sourceTree = "<group>"; };
 		F7536F9FD9896A0BDF30EC12 /* Pods-Todo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Todo/Pods-Todo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,6 +100,7 @@
 				BE4CA793215F6A5C00807762 /* TableViewController.swift */,
 				BE9268B0216123940033F3C1 /* AddViewController.swift */,
 				BE9268B2216124C90033F3C1 /* Todo.swift */,
+				BED1F13E2162315B003850C6 /* DetailViewController.swift */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			files = (
 				BE4CA782215F681300807762 /* AppDelegate.swift in Sources */,
 				BE4CA794215F6A5C00807762 /* TableViewController.swift in Sources */,
+				BED1F13F2162315B003850C6 /* DetailViewController.swift in Sources */,
 				BE9268B1216123940033F3C1 /* AddViewController.swift in Sources */,
 				BE9268B3216124C90033F3C1 /* Todo.swift in Sources */,
 			);

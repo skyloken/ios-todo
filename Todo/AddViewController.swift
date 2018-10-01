@@ -13,6 +13,9 @@ class AddViewController: UIViewController {
 
     @IBOutlet weak var newTodoTextField: UITextField!
 
+    @IBAction func tapView(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
     // Todoを追加
     @IBAction func AddTodoButton(_ sender: Any) {
 

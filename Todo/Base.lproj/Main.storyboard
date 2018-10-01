@@ -17,6 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Todo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Ul-NZ-0Qe">
+                                <rect key="frame" x="69" y="223" width="237" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="637-Wp-IYl">
                                 <rect key="frame" x="172" y="318" width="30" height="30"/>
                                 <state key="normal" title="Add"/>
@@ -24,27 +30,33 @@
                                     <action selector="AddTodoButton:" destination="H0R-Hd-dyq" eventType="touchUpInside" id="gMU-VS-qzb"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Todo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Ul-NZ-0Qe">
-                                <rect key="frame" x="69" y="223" width="237" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Ruo-sE-vBc" firstAttribute="trailing" secondItem="637-Wp-IYl" secondAttribute="trailing" constant="173" id="4bg-2h-MXB"/>
-                            <constraint firstItem="637-Wp-IYl" firstAttribute="leading" secondItem="Ruo-sE-vBc" secondAttribute="leading" constant="172" id="NnE-ot-LWE"/>
-                            <constraint firstItem="Ruo-sE-vBc" firstAttribute="bottom" secondItem="637-Wp-IYl" secondAttribute="bottom" constant="319" id="vEb-RW-A6w"/>
+                            <constraint firstItem="Ruo-sE-vBc" firstAttribute="trailing" secondItem="6Ul-NZ-0Qe" secondAttribute="trailing" constant="69" id="9Ml-Id-PtT"/>
+                            <constraint firstItem="637-Wp-IYl" firstAttribute="top" secondItem="6Ul-NZ-0Qe" secondAttribute="bottom" constant="65" id="AVR-EB-Hzx"/>
+                            <constraint firstItem="Ruo-sE-vBc" firstAttribute="trailing" secondItem="637-Wp-IYl" secondAttribute="trailing" constant="173" id="Kw2-ts-Exu"/>
+                            <constraint firstItem="6Ul-NZ-0Qe" firstAttribute="top" secondItem="Ruo-sE-vBc" secondAttribute="top" constant="159" id="RNC-rD-he9"/>
+                            <constraint firstItem="637-Wp-IYl" firstAttribute="leading" secondItem="Ruo-sE-vBc" secondAttribute="leading" constant="172" id="dV1-cF-2op"/>
+                            <constraint firstItem="6Ul-NZ-0Qe" firstAttribute="leading" secondItem="Ruo-sE-vBc" secondAttribute="leading" constant="69" id="dde-aA-LyL"/>
+                            <constraint firstItem="Ruo-sE-vBc" firstAttribute="bottom" secondItem="637-Wp-IYl" secondAttribute="bottom" constant="319" id="vCT-Zz-gHv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ruo-sE-vBc"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="KoY-8S-TgN" appends="YES" id="STk-fG-54U"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="newTodoTextField" destination="6Ul-NZ-0Qe" id="Rgn-kc-oCJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QBL-wx-VyD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="KoY-8S-TgN">
+                    <connections>
+                        <action selector="tapView:" destination="H0R-Hd-dyq" id="rft-kT-AA9"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1773.5999999999999" y="280.20989505247377"/>
         </scene>
@@ -95,20 +107,78 @@
             </objects>
             <point key="canvasLocation" x="969" y="684"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail-->
         <scene sceneID="g4q-Dh-Ifm">
             <objects>
-                <viewController id="CgL-uT-ySt" sceneMemberID="viewController">
+                <viewController id="CgL-uT-ySt" customClass="DetailViewController" customModule="Todo" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EGR-P0-eow">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Edit Todo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UYJ-vs-b7M">
+                                <rect key="frame" x="69" y="189" width="237" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ii6-z8-p9J">
+                                <rect key="frame" x="69" y="140" width="66" height="41"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVv-hT-V8y">
+                                <rect key="frame" x="69" y="266" width="96" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Edit Memo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hpd-iS-Fvw">
+                                <rect key="frame" x="69" y="316" width="237" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="UYJ-vs-b7M" firstAttribute="leading" secondItem="ii6-z8-p9J" secondAttribute="leading" id="8Vb-UR-dbV"/>
+                            <constraint firstItem="hpd-iS-Fvw" firstAttribute="leading" secondItem="QVv-hT-V8y" secondAttribute="leading" id="ExQ-CS-f3I"/>
+                            <constraint firstItem="hpd-iS-Fvw" firstAttribute="top" secondItem="QVv-hT-V8y" secondAttribute="bottom" constant="8" symbolic="YES" id="GNM-gy-rt5"/>
+                            <constraint firstItem="hpd-iS-Fvw" firstAttribute="trailing" secondItem="UYJ-vs-b7M" secondAttribute="trailing" id="J0V-Wm-iOm"/>
+                            <constraint firstItem="QVv-hT-V8y" firstAttribute="leading" secondItem="rEe-A7-2Zj" secondAttribute="leading" constant="69" id="T0H-Ya-8pd"/>
+                            <constraint firstItem="UYJ-vs-b7M" firstAttribute="leading" secondItem="QVv-hT-V8y" secondAttribute="leading" id="Xcj-se-bUu"/>
+                            <constraint firstItem="QVv-hT-V8y" firstAttribute="top" secondItem="UYJ-vs-b7M" secondAttribute="bottom" constant="47" id="iyM-au-xbk"/>
+                            <constraint firstItem="UYJ-vs-b7M" firstAttribute="top" secondItem="ii6-z8-p9J" secondAttribute="bottom" constant="8" symbolic="YES" id="lFF-tu-9Qz"/>
+                            <constraint firstItem="QVv-hT-V8y" firstAttribute="top" secondItem="EGR-P0-eow" secondAttribute="top" constant="266" id="nuU-Zc-87T"/>
+                            <constraint firstItem="UYJ-vs-b7M" firstAttribute="centerX" secondItem="EGR-P0-eow" secondAttribute="centerX" id="rrb-nL-93T"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rEe-A7-2Zj"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="DKc-oe-AB5" appends="YES" id="hct-IA-OBC"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" title="Detail" id="mOa-Oo-ovR">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="04P-BP-Hqp">
+                            <connections>
+                                <action selector="saveTodo:" destination="CgL-uT-ySt" id="yV5-ue-qO2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="todoMemo" destination="hpd-iS-Fvw" id="ZaD-Ng-1EO"/>
+                        <outlet property="todoTitle" destination="UYJ-vs-b7M" id="Ft3-d6-WAv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k1e-hp-ye9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="DKc-oe-AB5">
+                    <connections>
+                        <action selector="tapView:" destination="CgL-uT-ySt" id="Gll-dg-z6Y"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1776" y="1002"/>
+            <point key="canvasLocation" x="1775.2" y="1001.649175412294"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DuF-kZ-Z5O">

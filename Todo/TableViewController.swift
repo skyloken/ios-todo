@@ -43,14 +43,14 @@ class TableViewController: UITableViewController {
         // Configure the cell...
         let realm = try! Realm()
         let todoList = realm.objects(Todo.self)
-        let todoData = todoList[indexPath.row]
-        cell.textLabel?.text = todoData.text
+        let todo = todoList[indexPath.row]
+        cell.textLabel?.text = todo.text
 
         return cell
     }
-    
+
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCell.EditingStyle.delete {
+        if editingStyle == .delete {
             let realm = try! Realm()
             let todoList = realm.objects(Todo.self)
             try! realm.write {
@@ -59,7 +59,7 @@ class TableViewController: UITableViewController {
         }
         tableView.reloadData()
     }
-    
+
     // 再読み込み
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -101,14 +101,21 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "TodoDetail" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let realm = try! Realm()
+                let todoList = realm.objects(Todo.self)
+                let todo = todoList[indexPath.row]
+                (segue.destination as! DetailViewController).id = todo.id
+            }
+        }
     }
-    */
-
+    
 }
