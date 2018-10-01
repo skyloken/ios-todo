@@ -29,7 +29,6 @@ class DetailViewController: UIViewController {
         todoTitle.text = todo?.text
         todoMemo.text = todo?.memo
 
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func tapView(_ sender: UITapGestureRecognizer) {
