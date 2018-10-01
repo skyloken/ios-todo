@@ -11,14 +11,19 @@ import RealmSwift
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet weak var todoTitle: UITextField!
-    @IBOutlet weak var todoMemo: UITextField!
+    @IBOutlet weak var todoTitle: UITextView!
+    @IBOutlet weak var todoMemo: UITextView!
     
     var id: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // corner radius
+        todoTitle.layer.cornerRadius = 10
+        todoMemo.layer.cornerRadius = 10
+        
+        // idがnilならreturn
         guard let todoId = id else {
             return
         }
